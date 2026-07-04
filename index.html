@@ -1,310 +1,77 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>梁俊伟 - 室内设计师作品集</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>梁俊伟 - 室内设计师作品集</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<nav class="nav-main">
-<div class="nav-inner">
-<div class="nav-brand">
-<span class="brand-name">梁俊伟</span>
-<span class="brand-sub">设计工作室</span>
-</div>
-<div class="nav-links">
-<a href="#home">首页</a>
-<a href="#about">关于</a>
-<a href="#projects">作品</a>
-<a href="#strengths">优势</a>
-<a href="#contact">联系</a>
-</div>
-<a href="tel:15101212192" class="nav-contact-btn">预约咨询</a>
-</div>
-</nav>
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">梁俊伟</a>
+      <ul class="nav-links">
+        <li><a href="#hero">首页</a></li>
+        <li><a href="#about">关于</a></li>
+        <li><a href="#gallery">作品</a></li>
+        <li><a href="#advantages">优势</a></li>
+        <li><a href="#contact">联系</a></li>
+      </ul>
+    </div>
+  </nav>
 
-<section class="hero" id="home">
-<div class="hero-bg"></div>
-<div class="hero-content">
-<p class="hero-label">Interior Designer</p>
-<h1 class="hero-name">梁俊伟</h1>
-<div class="hero-divider"></div>
-<p class="hero-title">室内设计师 · 空间营造者</p>
-<p class="hero-desc">17年设计经验 · 家装 / 工装 / AI设计应用</p>
-<a href="#projects" class="hero-cta">浏览作品</a>
-</div>
-<div class="hero-scroll">
-<span>向下滚动</span>
-<div class="scroll-line"></div>
-</div>
-</section>
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <h1 id="hero-name"></h1>
+      <p class="hero-title" id="hero-title"></p>
+      <p class="hero-desc" id="hero-desc"></p>
+    </div>
+  </section>
 
-<section class="about-section" id="about">
-<div class="container">
-<div class="about-header">
-<span class="section-label">About Me</span>
-<h2 class="section-title">关于我</h2>
-<p class="section-desc">从创意到落地，17年专注每一寸空间的温度与美感</p>
-</div>
-<div class="about-grid">
-<div class="about-avatar">
-<div class="avatar-circle"><span>LJW</span></div>
-<div class="avatar-ring"></div>
-</div>
-<div class="about-info">
-<h3 class="info-name">梁俊伟</h3>
-<p class="info-role">产品营销 · 家装设计师</p>
-<div class="info-divider"></div>
-<p class="info-text">美术功底扎实，具备从客户定位、平面规划到施工交付，最终拍摄落地的完整执行经验。熟悉 Procreate、CAD，短视频制作与品牌内容运营，能够独立完成从线上获客，到私域转化，再到洽谈沟通，创意构思，签单成交，工地维护到最终交付落地。</p>
-<p class="info-text">具备展会、直播等线上电商平台等多场景视觉方案经验，能根据渠道风格快速调整内容表达。工作推进严谨高效，擅长复杂项目拆解、跨部门沟通与标准化执行，保障项目稳定落地。</p>
-<div class="contact-list">
-<div class="contact-item"><span class="contact-icon">&#128222;</span><span>15101212192</span></div>
-<div class="contact-item"><span class="contact-icon">&#9993;&#65039;</span><span>329826322@qq.com</span></div>
-<div class="contact-item"><span class="contact-icon">&#128205;</span><span>甘肃省兰州市</span></div>
-</div>
-<div class="about-stats">
-<div class="stat-item"><span class="stat-num">17</span><span class="stat-label">年设计经验</span></div>
-<div class="stat-item"><span class="stat-num">200+</span><span class="stat-label">完成项目</span></div>
-<div class="stat-item"><span class="stat-num">50+</span><span class="stat-label">别墅设计</span></div>
-<div class="stat-item"><span class="stat-num">100%</span><span class="stat-label">客户满意</span></div>
-</div>
-</div>
-</div>
-</div>
-</section>
+  <section class="about" id="about">
+    <div class="container">
+      <h2 class="section-title">关于我</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p id="about-intro"></p>
+        </div>
+        <div class="about-stats" id="about-stats"></div>
+      </div>
+      <div class="contact-info" id="contact-info"></div>
+    </div>
+  </section>
 
-<section class="projects-section" id="projects">
-<div class="container">
-<div class="projects-header">
-<span class="section-label">Selected Works</span>
-<h2 class="section-title">精选项目</h2>
-<p class="section-desc">每一个空间，都是一个故事</p>
-</div>
-<div class="gallery-container">
-<div class="gallery-track-wrapper">
-<div class="gallery-track">
-<div class="gallery-card">
-  <div class="card-image-wrapper">
-    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&amp;q=80" alt="兰州枫叶国际" class="card-image-grayscale">
-    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&amp;q=80" alt="兰州枫叶国际" class="card-image-color">
-  </div>
-  <span class="card-number">01</span>
-  <div class="card-info">
-    <span class="card-category">大平层</span>
-    <h3 class="card-title">兰州枫叶国际</h3>
-    <p class="card-description">320㎡ 现代轻奢大平层设计</p>
-  </div>
-</div>
-<div class="gallery-card">
-  <div class="card-image-wrapper">
-    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&amp;q=80" alt="天水刘总宅邸" class="card-image-grayscale">
-    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&amp;q=80" alt="天水刘总宅邸" class="card-image-color">
-  </div>
-  <span class="card-number">02</span>
-  <div class="card-info">
-    <span class="card-category">复式别墅</span>
-    <h3 class="card-title">天水刘总宅邸</h3>
-    <p class="card-description">480㎡ 复式别墅设计</p>
-  </div>
-</div>
-<div class="gallery-card">
-  <div class="card-image-wrapper">
-    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&amp;q=80" alt="宁德余总办公室" class="card-image-grayscale">
-    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&amp;q=80" alt="宁德余总办公室" class="card-image-color">
-  </div>
-  <span class="card-number">03</span>
-  <div class="card-info">
-    <span class="card-category">办公场所</span>
-    <h3 class="card-title">宁德余总办公室</h3>
-    <p class="card-description">200㎡ 现代办公空间</p>
-  </div>
-</div>
-<div class="gallery-card">
-  <div class="card-image-wrapper">
-    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&amp;q=80" alt="高端餐饮空间" class="card-image-grayscale">
-    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&amp;q=80" alt="高端餐饮空间" class="card-image-color">
-  </div>
-  <span class="card-number">04</span>
-  <div class="card-info">
-    <span class="card-category">小型工装</span>
-    <h3 class="card-title">高端餐饮空间</h3>
-    <p class="card-description">350㎡ 餐饮娱乐空间设计</p>
-  </div>
-</div>
-<div class="gallery-card">
-  <div class="card-image-wrapper">
-    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&amp;q=80" alt="现代奢居" class="card-image-grayscale">
-    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&amp;q=80" alt="现代奢居" class="card-image-color">
-  </div>
-  <span class="card-number">05</span>
-  <div class="card-info">
-    <span class="card-category">大平层</span>
-    <h3 class="card-title">现代奢居</h3>
-    <p class="card-description">260㎡ 极简奢华住宅</p>
-  </div>
-</div>
-<div class="gallery-card">
-  <div class="card-image-wrapper">
-    <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&amp;q=80" alt="山景别墅" class="card-image-grayscale">
-    <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&amp;q=80" alt="山景别墅" class="card-image-color">
-  </div>
-  <span class="card-number">06</span>
-  <div class="card-info">
-    <span class="card-category">复式别墅</span>
-    <h3 class="card-title">山景别墅</h3>
-    <p class="card-description">520㎡ 山景度假别墅</p>
-  </div>
-</div>
-</div>
-</div>
-<div class="gallery-nav">
-<button class="gallery-arrow" id="prevBtn">
-<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
-</button>
-<div class="gallery-dots" id="galleryDots"></div>
-<button class="gallery-arrow" id="nextBtn">
-<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
-</button>
-</div>
-<div class="gallery-scroll-hint">
-<span>&#8592; 拖拽或点击箭头浏览 &#8594;</span>
-</div>
-</div>
-</div>
-</section>
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <h2 class="section-title">精选项目</h2>
+      <div class="gallery-grid" id="gallery-grid"></div>
+    </div>
+  </section>
 
-<section class="strengths-section" id="strengths">
-<div class="container">
-<div class="strengths-header">
-<span class="section-label">Core Capabilities</span>
-<h2 class="section-title">个人优势</h2>
-<p class="section-desc">从创意到落地，从设计到运营，全方位的设计能力矩阵</p>
-</div>
-<div class="strengths-grid">
-<div class="strength-card">
-<div class="strength-icon">&#127912;</div>
-<h3 class="strength-title">美术功底扎实</h3>
-<p class="strength-desc">具备从客户定位、平面规划到施工交付，最终拍摄落地的完整执行经验</p>
-</div>
-<div class="strength-card">
-<div class="strength-icon">&#128214;</div>
-<h3 class="strength-title">全案设计能力</h3>
-<p class="strength-desc">熟悉 Procreate、CAD，能够独立完成从线上获客到签单成交的全流程</p>
-</div>
-<div class="strength-card">
-<div class="strength-icon">&#129302;</div>
-<h3 class="strength-title">AI与设计融合</h3>
-<p class="strength-desc">熟悉多模态AI工具辅助创意发散、脚本撰写、图片参考生成与视觉风格归纳</p>
-</div>
-<div class="strength-card">
-<div class="strength-icon">&#128101;</div>
-<h3 class="strength-title">跨部门协作</h3>
-<p class="strength-desc">擅长复杂项目拆解、跨部门沟通与标准化执行，保障项目稳定落地</p>
-</div>
-<div class="strength-card">
-<div class="strength-icon">&#128161;</div>
-<h3 class="strength-title">多场景视觉方案</h3>
-<p class="strength-desc">具备展会、直播等线上电商平台等多场景视觉方案经验，快速调整内容表达</p>
-</div>
-<div class="strength-card">
-<div class="strength-icon">&#128200;</div>
-<h3 class="strength-title">品牌内容运营</h3>
-<p class="strength-desc">短视频制作与品牌内容运营，自媒体抖音、小红书设计类视频持续更新</p>
-</div>
-</div>
-</div>
-</section>
+  <section class="advantages" id="advantages">
+    <div class="container">
+      <h2 class="section-title">核心优势</h2>
+      <div class="advantage-grid" id="advantage-grid"></div>
+    </div>
+  </section>
 
-<section class="contact-section" id="contact">
-<div class="container">
-<div class="contact-content">
-<span class="section-label">Get in Touch</span>
-<h2 class="section-title">联系我</h2>
-<p class="section-desc">期待与您合作，创造美好的空间体验</p>
-<div class="contact-grid">
-<div class="contact-card">
-<div class="contact-card-icon">&#128222;</div>
-<h4>电话</h4>
-<p>15101212192</p>
-</div>
-<div class="contact-card">
-<div class="contact-card-icon">&#9993;&#65039;</div>
-<h4>邮箱</h4>
-<p>329826322@qq.com</p>
-</div>
-<div class="contact-card">
-<div class="contact-card-icon">&#128205;</div>
-<h4>地址</h4>
-<p>甘肃省兰州市</p>
-</div>
-<div class="contact-card">
-<div class="contact-card-icon">&#128336;</div>
-<h4>工作时间</h4>
-<p>周一至周五 9:00-18:00</p>
-</div>
-</div>
-</div>
-</div>
-</section>
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2 class="section-title">联系我</h2>
+      <div class="contact-cards" id="contact-cards"></div>
+    </div>
+  </section>
 
-<footer class="footer-main">
-<div class="container">
-<p>&#169; 2024 梁俊伟设计工作室. All rights reserved.</p>
-</div>
-</footer>
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; <span id="footer-year"></span> 梁俊伟设计工作室. All rights reserved.</p>
+    </div>
+  </footer>
 
-<script>
-(function(){
-var track=document.querySelector(".gallery-track");
-var prevBtn=document.getElementById("prevBtn");
-var nextBtn=document.getElementById("nextBtn");
-var dotsContainer=document.getElementById("galleryDots");
-var cards=document.querySelectorAll(".gallery-card");
-if(!track||cards.length===0)return;
-var cardWidth=cards[0].offsetWidth+30;
-var currentIndex=0;
-var isDragging=false;
-var startPos=0;
-var currentTranslate=0;
-var prevTranslate=0;
-function getMaxIndex(){
-var visibleCards=Math.floor(track.parentElement.offsetWidth/cardWidth);
-return Math.max(0,cards.length-visibleCards);
-}
-for(var i=0;i<=getMaxIndex();i++){
-var dot=document.createElement("div");
-dot.className="gallery-dot"+(i===0?" active":"");
-(function(idx){dot.addEventListener("click",function(){goToSlide(idx);});})(i);
-dotsContainer.appendChild(dot);
-}
-function updateDots(){
-var dots=dotsContainer.querySelectorAll(".gallery-dot");
-for(var j=0;j<dots.length;j++)dots[j].classList.toggle("active",j===currentIndex);
-}
-function goToSlide(index){
-var maxIdx=getMaxIndex();
-currentIndex=Math.max(0,Math.min(index,maxIdx));
-currentTranslate=-currentIndex*cardWidth;
-prevTranslate=currentTranslate;
-track.style.transform="translateX("+currentTranslate+"px)";
-updateDots();
-}
-prevBtn.addEventListener("click",function(){goToSlide(currentIndex-1);});
-nextBtn.addEventListener("click",function(){goToSlide(currentIndex+1);});
-track.addEventListener("mousedown",function(e){isDragging=true;startPos=e.pageX;track.style.transition="none";});
-track.addEventListener("mousemove",function(e){if(!isDragging)return;var diff=e.pageX-startPos;currentTranslate=prevTranslate+diff;track.style.transform="translateX("+currentTranslate+"px)";});
-track.addEventListener("mouseup",function(e){if(!isDragging)return;isDragging=false;var diff=e.pageX-startPos;if(Math.abs(diff)>50){goToSlide(diff<0?currentIndex+1:currentIndex-1);}else{goToSlide(currentIndex);}});
-track.addEventListener("mouseleave",function(){if(isDragging){isDragging=false;goToSlide(currentIndex);}});
-track.addEventListener("touchstart",function(e){isDragging=true;startPos=e.touches[0].pageX;track.style.transition="none";});
-track.addEventListener("touchmove",function(e){if(!isDragging)return;var diff=e.touches[0].pageX-startPos;currentTranslate=prevTranslate+diff;track.style.transform="translateX("+currentTranslate+"px)";});
-track.addEventListener("touchend",function(e){isDragging=false;var diff=e.changedTouches[0].pageX-startPos;if(Math.abs(diff)>50){goToSlide(diff<0?currentIndex+1:currentIndex-1);}else{goToSlide(currentIndex);}});
-track.parentElement.addEventListener("wheel",function(e){e.preventDefault();goToSlide(currentIndex+(e.deltaY>0?1:-1));},{passive:false});
-})();
-</script>
+  <script src="app.js"></script>
 </body>
 </html>

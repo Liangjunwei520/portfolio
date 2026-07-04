@@ -66,31 +66,50 @@ async function renderAbout(content) {
   }
 }
 
-async function renderGallery(projects) {
-  const grid = document.getElementById("gallery-grid");
-  if (!grid) return;
-  if (!projects || projects.length === 0) {
-    grid.innerHTML = '<p class="error-msg">暂无项目数据</p>';
-    return;
+async function initCircularGallery(projects) {
+  const container = document.getElementById("circular-gallery");
+  if (!container || !projects || projects.length === 0) return;
+
+  const galleryItems = projects.map(p => ({
+    image: p.imageUrl || p.grayscaleUrl || "",
+    text: `${p.title} · ${p.category} · ${p.area}㎡`
+  }));
+
+  if (typeof CircularGalleryRenderer !== "undefined") {
+    try {
+      new CircularGalleryRenderer(container, {
+        items: galleryItems,
+        bend: 5,
+        textColor: "#ffffff",
+        borderRadius: 0.06,
+        scrollEase: 0.08,
+        scrollSpeed: 2.5,
+        font: "bold 16px 'Noto Sans SC', sans-serif"
+      });
+    } catch (err) {
+      console.error("CircularGallery init error:", err);
+      // Fallback to simple horizontal scroll
+      container.innerHTML = galleryItems.map(item =>
+        `<div style="flex-shrink:0;width:320px;height:220px;border-radius:16px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.15);">
+          <img src="${item.image}" style="width:100%;height:100%;object-fit:cover;">
+          <div style="position:absolute;bottom:0;left:0;right:0;padding:16px;background:linear-gradient(transparent,rgba(0,0,0,0.7));color:#fff;font-size:14px;">${item.text}</div>
+        </div>`
+      ).join("");
+    }
+  } else {
+    // Fallback: simple horizontal scroll gallery
+    container.style.display = "flex";
+    container.style.overflowX = "auto";
+    container.style.gap = "20px";
+    container.style.padding = "40px 0";
+    container.style.scrollSnapType = "x mandatory";
+    container.innerHTML = galleryItems.map(item =>
+      `<div style="flex-shrink:0;width:320px;height:220px;border-radius:16px;overflow:hidden;scroll-snap-align:center;box-shadow:0 8px 32px rgba(0,0,0,0.15);transition:transform 0.3s ease;">
+        <img src="${item.image}" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:16px;background:linear-gradient(transparent,rgba(0,0,0,0.7));color:#fff;font-size:14px;">${item.text}</div>
+      </div>`
+    ).join("");
   }
-  const uploadBase = API_BASE.replace("/api", "");
-  grid.innerHTML = projects.map(p => {
-    const imgUrl = p.imageUrl || uploadBase + "/uploads/" + (p.image || "");
-    return `<div class="gallery-card" data-project-id="${p.id || ""}">
-      <div class="gallery-card-image">
-        <img src="${imgUrl}" alt="${p.title || ""}" loading="lazy"
-             onerror="this.parentElement.style.background='var(--gray-200)'"/>
-      </div>
-      <div class="gallery-card-body">
-        <h3>${p.title || ""}</h3>
-        <p>${p.description || ""}</p>
-        <div class="gallery-card-tags">
-          ${p.category ? `<span class="tag">${p.category}</span>` : ""}
-          ${p.area ? `<span class="tag">${p.area}m²</span>` : ""}
-        </div>
-      </div>
-    </div>`;
-  }).join("");
 }
 
 async function renderAdvantages(content) {
@@ -141,7 +160,7 @@ async function init() {
   ]);
   await renderHero(contentData);
   await renderAbout(contentData);
-  await renderGallery(projectsData);
+  await initCircularGallery(projectsData);
   await renderAdvantages(contentData);
   await renderContact(contentData);
 }
